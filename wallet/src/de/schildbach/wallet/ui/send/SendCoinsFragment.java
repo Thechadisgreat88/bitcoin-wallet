@@ -52,12 +52,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Filter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
 import androidx.core.view.MenuProvider;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
@@ -479,6 +483,15 @@ public final class SendCoinsFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
             final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.send_coins_fragment, container, false);
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+            final Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            if (insets.bottom > 0) {
+                final LinearLayout layout = (LinearLayout) v;
+                layout.setShowDividers(layout.getShowDividers() | LinearLayout.SHOW_DIVIDER_END);
+            }
+            v.setPadding(insets.left, v.getPaddingTop(), insets.right, insets.bottom);
+            return windowInsets;
+        });
 
         payeeGroup = view.findViewById(R.id.send_coins_payee_group);
 
