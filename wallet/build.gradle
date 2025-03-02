@@ -10,7 +10,7 @@ configurations {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.8.2'
+    implementation 'androidx.annotation:annotation:1.9.1'
     implementation 'androidx.core:core:1.13.1'
     implementation 'androidx.activity:activity:1.9.3'
     implementation 'androidx.fragment:fragment:1.7.1'
@@ -23,8 +23,8 @@ dependencies {
     implementation 'androidx.sqlite:sqlite:2.4.0'
     implementation "androidx.room:room-runtime:2.6.1"
     annotationProcessor "androidx.room:room-compiler:2.6.1"
-    implementation 'org.bitcoinj:bitcoinj-core:0.16.3'
-    implementation 'com.google.guava:guava:33.1.0-android'
+    implementation 'org.bitcoinj:bitcoinj-core:0.16.5'
+    implementation 'com.google.guava:guava:33.4.0-android'
     implementation 'com.google.zxing:core:3.5.3'
     //noinspection GradleDependency
     implementation 'com.squareup.okhttp3:okhttp:3.14.9'
@@ -106,6 +106,7 @@ android {
         exclude 'META-INF/proguard/**'
         exclude 'META-INF/services/**' // ineffective, for some reason
         exclude 'META-INF/**/coroutines.pro'
+        exclude 'META-INF/androidx/annotation/annotation/LICENSE.txt'
         exclude 'DebugProbesKt.bin'
         exclude '**/*.proto'
         exclude 'kotlin/**'

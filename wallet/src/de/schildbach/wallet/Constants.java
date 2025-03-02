@@ -130,7 +130,7 @@ public final class Constants {
 
     /** Donation address for tip/donate action. */
     public static final String DONATION_ADDRESS = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET)
-            ? "bc1qdde452znpy4lpksqt766hskkmpxcw6cp0s4jvk" : null;
+            ? "bc1q66u53meh4n3a9crmx7fhgphhw975llz00m8jda" : null;
 
     /** Recipient e-mail address for reports. */
     public static final String REPORT_EMAIL = "bitcoin.wallet.developers@gmail.com";
@@ -187,7 +187,7 @@ public final class Constants {
     public static final Coin TOO_MUCH_BALANCE_THRESHOLD = Coin.COIN.divide(32);
     /** A balance above this amount will cause the donate option to be shown */
     public static final Coin SOME_BALANCE_THRESHOLD = Coin.COIN.divide(1600);
-    /** Values less than this are considered not spendable in an economic way */
+    /** Values less than this are considered not spendable in an economical way */
     public static final Coin MIN_NONDUST = Coin.valueOf(546); // satoshis
 
     public static final int SDK_DEPRECATED_BELOW = Build.VERSION_CODES.P;
